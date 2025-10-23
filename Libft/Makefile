@@ -18,7 +18,7 @@ RM = rm -f
 
 SRCS = *.c
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
