@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:38:49 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/24 16:38:52 by mbiusing         ###   ########.fr       */
+/*   Updated: 2025/10/24 17:17:42 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@ int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	return (0);
+	else
+		return (0);
 }

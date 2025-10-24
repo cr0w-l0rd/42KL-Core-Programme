@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:38:33 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/24 16:38:37 by mbiusing         ###   ########.fr       */
+/*   Updated: 2025/10/24 17:17:25 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	return (0);
+	else
+		return (0);
 }
