@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: crowlord <crowlord@student.42.fr>          +#+  +:+       +#+         #
+#    By: mbiusing <mbiusing@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/24 01:07:49 by crowlord          #+#    #+#              #
-#    Updated: 2025/10/24 01:25:27 by crowlord         ###   ########.fr        #
+#    Created: 2025/10/24 16:38:08 by mbiusing          #+#    #+#              #
+#    Updated: 2025/10/24 16:38:19 by mbiusing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
