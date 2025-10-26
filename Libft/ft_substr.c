@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 23:47:02 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/26 23:57:57 by mbiusing         ###   ########.fr       */
+/*   Created: 2025/10/26 23:58:16 by mbiusing          #+#    #+#             */
+/*   Updated: 2025/10/27 00:25:17 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*array;
-	int	size;
-	int	i;
+	size_t		i;
+	char	*substring;
+	size_t		mainlen;
 
-	size = ft_strlen(s);
-	array = (char *) malloc(sizeof(char *) * size);
-	if (!array)
-		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	if (s[i] == '\0' || !s || start >= len)
+		return (NULL);
+	mainlen = ft_strlen(s);
+	subtring = (char *) malloc(sizeof(char *) * len);
+	while (i <= len)
 	{
-		*array = s[i];
-		array++;
+		subtring[i] = s[start + i];
+		subtring++;
 		i++;
 	}
-	*array = '\0';
-	return (array);
+	subtring[i] = '\0';
+	return (substring);
 }
