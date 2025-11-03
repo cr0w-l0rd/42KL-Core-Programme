@@ -16,28 +16,28 @@
 
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I.
 LIBC = ar -rcs
 RM = rm -f
 
-SRCS = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
+SRC = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
 		ft_isdigit.c ft_isalpha.c ft_atoi.c ft_strlen.c ft_strlcat.c \
 		ft_strncmp.c ft_strdup.c ft_calloc.c ft_memcpy.c ft_strchr.c \
 		ft_strrchr.c ft_strnstr.c ft_bzero.c ft_memchr.c ft_memcmp.c \
 		ft_memset.c ft_memmove.c ft_strlcpy.c
 
-OBJS = $(SRCS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: ${NAME}
 
-$(NAME): $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	$(LIBC) $(NAME) $(OBJ)
 	
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)

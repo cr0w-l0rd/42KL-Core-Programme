@@ -21,6 +21,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	memalloced = malloc(actualsize);
 	if (!memalloced)
 		return (NULL);
-	memset(memalloced, 0, actualsize);
+	ft_memset(memalloced, 0, actualsize);
 	return (memalloced);
 }

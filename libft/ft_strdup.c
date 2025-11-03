@@ -12,13 +12,15 @@
 
 #include "libft.h"
 
-char	*ft_atoi(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*array;
 	int		size;
 	int		i;
 
-	size = ft_strlen(s);
+	if (s == NULL)
+		return (NULL);
+	size = ft_strlen((char*)s);
 	array = (char *) malloc(sizeof(char *) * size);
 	if (!array)
 		return (NULL);

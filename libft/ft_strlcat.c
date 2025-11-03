@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t set_size)
 	size_t	i;
 
 	dest_size = ft_strlen(dest);
-	src_size = ft_strlen(src);
+	src_size = ft_strlen((char*) src);
 	appendable = set_size - dest_size - 1;
 	i = 0;
 	while (i <= appendable)
