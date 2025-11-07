@@ -13,6 +13,23 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c - 32);
+		return (c + 32);
 	return (c);
 }
+
+/*
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
+{
+	if (argc != 2)
+	{
+		printf("use it liddis : a.out C");
+		return (1);
+	}
+
+	char c = ft_tolower(*argv[1]);
+	printf("%c", c);
+	return (0);
+}
+*/

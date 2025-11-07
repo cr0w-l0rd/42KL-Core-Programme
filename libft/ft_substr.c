@@ -32,3 +32,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substring[i] = '\0';
 	return (substring);
 }
+
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
+{
+	if (argc != 4)
+	{
+		printf("input the args smthn liddis : 123456789 5 4");
+		return (1);
+	}
+}

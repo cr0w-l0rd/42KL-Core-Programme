@@ -18,7 +18,7 @@ static int  ft_countchar(long n)
 
     if (n <= 0)
         count++;
-    while (n)
+    while (n != 0)
     {
         n /= 10;
         count++;
