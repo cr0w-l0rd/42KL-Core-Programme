@@ -23,15 +23,16 @@ void    ft_putnbr_fd(int n, int fd)
         ft_putchar_fd('-', fd);
     }
     else if (nb >= 0 && nb <= 9)
-        ft_putchar_fd(nb, fd);
+        ft_putchar_fd(nb + '0', fd);
     else
     {
-        ft_putnbr_fd(nb % 10, fd);
         ft_putnbr_fd(nb / 10, fd);
+        ft_putnbr_fd(nb % 10, fd);
 
     }
 }
 
+/*
 #include <stdio.h>
 
 int main(int argc, char *argv[])
@@ -46,3 +47,4 @@ int main(int argc, char *argv[])
     ft_putnbr_fd(nb, fd);
     return (0);
 }
+*/
