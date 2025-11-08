@@ -19,33 +19,29 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2len;
 	size_t	i;
 
-	if (s1 != NULL || s2 != NULL)
+	if (!s1 || !s2)
 		return (NULL);
 
-	s1len = ft_strlen((char *)s1);
-	s2len = ft_strlen((char *)s2);
-	newstring = (char *) malloc(sizeof(char *) * (s1len + s2len + 1));
-
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	newstring = (char *)malloc(sizeof(char) * (s1len + s2len + 1));
 	if (!newstring)
 		return (NULL);
+
 	i = 0;
 	while (i < s1len)
 	{
-		*newstring = *s1;
-		newstring++;
-		s1++;
+		newstring[i] = s1[i];
+		i++;
 	}
-	while (i < (s1len + s2len))
+	for (size_t j = 0; j < s2len; j++)
 	{
-		*newstring = *s2;
-		newstring++;
-		s2++;
+		newstring[i + j] = s2[j];
 	}
-	newstring++;
-	*newstring = '\0';
+	newstring[i + s2len] = '\0';
 	return (newstring);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -68,3 +64,4 @@ int	main(void)
 	string = NULL;
 	return (0);
 }
+*/

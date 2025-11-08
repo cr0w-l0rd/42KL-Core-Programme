@@ -15,22 +15,17 @@
 char	*ft_strchr(const char *str, int c)
 {
 	int	i;
+	char	ch;
 
+	ch = (char)c;
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (str[i] == c)
-			return ((char *) &str[i]);
+		if (str[i] == ch)
+			return ((char *)&str[i]);
 		i++;
 	}
+	if (ch == '\0')
+		return ((char *)&str[i]);
 	return (NULL);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-	char	test1[] = "whats up!";
-	printf("whats up! -> %s", strchr(test1, 'w'));
-	return (0);
-}*/

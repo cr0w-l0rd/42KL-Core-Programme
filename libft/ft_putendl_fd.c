@@ -24,7 +24,7 @@ void    ft_putendl_fd(char *s, int fd)
     }
     write(fd, "\n", 1);
 }
-
+/*
 #include <stdio.h>
 
 int main(int argc, char *argv[])
@@ -40,3 +40,4 @@ int main(int argc, char *argv[])
     ft_putendl_fd(str, fd);
     return (0);
 }
+*/

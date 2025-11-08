@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
+/*
 #include <stdio.h>
 
 int	main(int argc, char *argv[])
@@ -55,3 +55,4 @@ int	main(int argc, char *argv[])
 	free(test);
 	return (0);
 }
+*/

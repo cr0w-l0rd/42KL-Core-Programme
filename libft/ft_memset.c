@@ -14,21 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*sentence;
+	unsigned char	*ptr;
 
-	sentence = s;
+	ptr = (unsigned char *)s;
 	while (n--)
 	{
-		*sentence = c;
-		sentence++;
+		*ptr = (unsigned char)c;
+		ptr++;
 	}
-	return (sentence);
+	return (s);
 }
-
-/*int	main(void)
-{
-	char	array[10];
-	ft_memset(array, '!', sizeof(array));
-	printf("%s", array);
-	return (0);
-}*/

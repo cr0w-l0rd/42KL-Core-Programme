@@ -10,21 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
+/*
+#include <stdio.h>
 
-/*int	main(void)
+int	main(int argc, char *argv[])
 {
-	int	test1 = '9';
-	if (ft_isdigit(test1))
-		printf("%c is a digit", test1);
+	if (argc != 2)
+	{
+		printf("hey this is the wrong usage, enter it liddis : a.out 2  OR a.out M");
+		return (1);
+	}
+	int c = *argv[1];
+	if (ft_isdigit(c))
+		printf("yup this is a digit");
 	else
-		printf("%c is not a digit", test1);
+		printf("nah this aint a digit");
 	return (0);
-}*/
+}
+*/

@@ -12,20 +12,23 @@
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	s_size;
-	unsigned char	ch;
+	int		i;
+	char	ch;
 
-	s_size = ft_strlen(s);
-	ch = (unsigned char) c;
+	ch = (char)c;
+	i = ft_strlen(s);
+
+	// handle searching for '\0'
 	if (ch == '\0')
-		return ((char *) &s[s_size]);
-	while (s[s_size] >= 0)
+		return ((char *)&s[i]);
+
+	while (i >= 0)
 	{
-		if (s[s_size] == c)
-			return ((char *) &s[s_size]);
-		s_size--;
+		if (s[i] == ch)
+			return ((char *)&s[i]);
+		i--;
 	}
 	return (NULL);
 }

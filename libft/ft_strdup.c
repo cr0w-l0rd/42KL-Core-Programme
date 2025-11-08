@@ -20,17 +20,16 @@ char	*ft_strdup(const char *s)
 
 	if (s == NULL)
 		return (NULL);
-	size = ft_strlen((char*)s);
-	array = (char *) malloc(sizeof(char *) * size);
+	size = ft_strlen(s);
+	array = (char *) malloc(sizeof(char) * (size + 1));
 	if (!array)
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
-		*array = s[i];
-		array++;
+		array[i] = s[i];
 		i++;
 	}
-	*array = '\0';
+	array[i] = '\0';
 	return (array);
 }

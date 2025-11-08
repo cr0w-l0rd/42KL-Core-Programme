@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	is_in_set(char c, const char *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -30,27 +32,34 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	len;
 	char	*trimmed;
-	size_t	i;
 
 	if (!s1 || !set)
 		return (NULL);
 	begin = 0;
 	end = ft_strlen(s1);
+	if (end == 0)
+		return (ft_strdup(""));
 	end--;
+
+	/* move begin forward */
 	while (s1[begin] && is_in_set(s1[begin], set))
 		begin++;
+
+	/* move end backward */
 	while (end > begin && is_in_set(s1[end], set))
 		end--;
+
+	/* if everything is trimmed */
+	if (begin > end)
+		return (ft_strdup(""));
+
 	len = end - begin + 1;
+
 	trimmed = malloc(len + 1);
 	if (!trimmed)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		trimmed[i] = s1[begin + i];
-		i++;
-	}
-	trimmed[i] = '\0';
+
+	ft_memcpy(trimmed, s1 + begin, len);
+	trimmed[len] = '\0';
 	return (trimmed);
 }

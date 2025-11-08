@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isprint(int c)
 {
-	if (c >= '!' && c <= '~')
+	if (c >= ' ' && c <= '~')
 		return (1);
 	return (0);
 }
+/*
+#include <stdio.h>
 
-/*int	main(void)
+int	main(void)
 {
 	char	test1 = '\n';
 	if (ft_isprint(test1))
