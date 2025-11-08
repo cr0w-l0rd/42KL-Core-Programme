@@ -15,22 +15,27 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t		i;
-	char		*substring;
+	char		*sub;
 	size_t		mainlen;
 
-	i = 0;
-	if (s[i] == '\0' || !s || start >= len)
+	if (!s)
 		return (NULL);
 	mainlen = ft_strlen(s);
-	substring = (char *) malloc(sizeof(char *) * len);
-	while (i <= len)
+	if (start >= mainlen)
+		return (ft_strdup(""));
+	if (len > mainlen - start)
+		len = mainlen - start;
+	sub = malloc(sizeof(char) * len + 1);
+	if (sub == NULL)
+		return (NULL);
+	i = 0;
+	while ((s[start + i] != '\0') && i < len)
 	{
-		substring[i] = s[start + i];
-		substring++;
+		sub[i] = s[start + i];
 		i++;
 	}
-	substring[i] = '\0';
-	return (substring);
+	sub[i] = '\0';
+	return (sub);
 }
 
 #include <stdio.h>
@@ -42,4 +47,11 @@ int	main(int argc, char *argv[])
 		printf("input the args smthn liddis : 123456789 5 4");
 		return (1);
 	}
+	char *s = argv[1];
+	int start = ft_atoi(argv[2]);
+	size_t len = ft_atoi(argv[3]);
+	char *test = ft_substr(s,start, len);
+	printf("%s", test);
+	free(test);
+	return (0);
 }

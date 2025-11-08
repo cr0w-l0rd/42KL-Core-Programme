@@ -20,12 +20,19 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
-/*int	main(void)
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
 {
-	char test1 = '!';
-	if (ft_isalnum(test1))
-		printf("%c is alphanumeric", test1);
+	if (argc != 2)
+	{
+		printf("put in smthn like this : a.out M   OR  a.out 2");
+		return (1);
+	}
+	char c = *argv[1];
+	if (ft_isalnum(c))
+		printf("yarz it is alphanumerical");
 	else
-		printf("%c is not alphanumeric", test1);
+		printf("naur its not alphanumerical");
 	return (0);
-}*/
+}

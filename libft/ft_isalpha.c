@@ -19,12 +19,21 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-/*int	main(void)
+/*
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
 {
-	char	ch = 'A';
-	if (ft_isalpha(ch))
-		printf("%c is an alphabet", ch);
+	if (argc != 2)
+	{
+		printf("put in smthn like this : a.out M   OR  a.out 2");
+		return (1);
+	}
+	char c = *argv[1];
+	if (ft_isalpha(c))
+		printf("yarz it is an alphabet");
 	else
-		printf("%c is not an alphabet", ch);
-	return(0);
-}*/
+		printf("naur its not an alphabet");
+	return (0);
+}
+*/

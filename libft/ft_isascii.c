@@ -19,12 +19,21 @@ int	ft_isascii(int c)
 	return (0);
 }
 
-/*int	main(void)
+/*
+#include <stdio.h>
+
+int	main(int argc, char *argv[])
 {
-	char	test1 = 0x80;
-	if (ft_isascii(test1))
-		printf("%c is an ascii character", test1);
+	if (argc != 2)
+	{
+		printf("put in smthn like this : a.out M   OR  a.out â");
+		return (1);
+	}
+	char c = *argv[1];
+	if (ft_isascii(c))
+		printf("yarz it is ascii (0 - 127)");
 	else
-		printf("%c is not an ascii character", test1);
+		printf("naur its not ascii (beyond the range of 0 - 127)");
 	return (0);
-}*/
+}
+*/

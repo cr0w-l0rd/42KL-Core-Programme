@@ -10,34 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strtrim(const char *s1, char const *set)
-{
-	char			*trimmed;
-	int				begin;
-	int				end;
-	int				i;
-	size_t			len;
-
-	begin = 0;
-	end = ft_strlen(s1) - 1;
-	while (trim(set, s1[begin]))
-		begin++;
-	while (trim(set, s1[end]))
-		end--;
-	len = end - begin;
-	trimmed = (char *) calloc(len + 1, sizeof(char));
-	if (!trimmed)
-		return (NULL);
-	while (trimmed[i])
-	{
-		trimmed[i] = s1[begin + i];
-	}
-	return (trimmed);
-}
-
-static int	trim(const char *set, char c)
+static int	is_in_set(char c, const char *set)
 {
 	int	i;
 
@@ -51,9 +24,33 @@ static int	trim(const char *set, char c)
 	return (0);
 }
 
-#include <stdio.h>
-
-int	main(void)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	
+	size_t	begin;
+	size_t	end;
+	size_t	len;
+	char	*trimmed;
+	size_t	i;
+
+	if (!s1 || !set)
+		return (NULL);
+	begin = 0;
+	end = ft_strlen(s1);
+	end--;
+	while (s1[begin] && is_in_set(s1[begin], set))
+		begin++;
+	while (end > begin && is_in_set(s1[end], set))
+		end--;
+	len = end - begin + 1;
+	trimmed = malloc(len + 1);
+	if (!trimmed)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		trimmed[i] = s1[begin + i];
+		i++;
+	}
+	trimmed[i] = '\0';
+	return (trimmed);
 }
