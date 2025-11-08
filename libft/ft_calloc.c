@@ -14,9 +14,12 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t		actualsize;
-	size_t		*memalloced;
+	void	*memalloced;
+	size_t	actualsize;
 
+	// overflow check
+	if (nmemb != 0 && size != 0 && (nmemb * size) / nmemb != size)
+		return (NULL);
 	actualsize = nmemb * size;
 	memalloced = malloc(actualsize);
 	if (!memalloced)
