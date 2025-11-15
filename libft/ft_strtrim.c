@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 13:56:17 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/30 23:27:23 by mbiusing         ###   ########.fr       */
+/*   Updated: 2025/11/13 10:28:54 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (end == 0)
 		return (ft_strdup(""));
 	end--;
-
-	/* move begin forward */
 	while (s1[begin] && is_in_set(s1[begin], set))
 		begin++;
-
-	/* move end backward */
 	while (end > begin && is_in_set(s1[end], set))
 		end--;
-
-	/* if everything is trimmed */
 	if (begin > end)
 		return (ft_strdup(""));
-
 	len = end - begin + 1;
-
 	trimmed = malloc(len + 1);
 	if (!trimmed)
 		return (NULL);
-
 	ft_memcpy(trimmed, s1 + begin, len);
 	trimmed[len] = '\0';
 	return (trimmed);

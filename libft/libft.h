@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:56:21 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/28 12:28:10 by mbiusing         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:45:51 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/* Defining LinkedList */
+/* Singly Linked List */
 
 typedef struct s_list
 {
@@ -64,7 +64,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-
 
 #endif

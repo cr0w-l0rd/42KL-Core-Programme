@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:04:30 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/11/13 10:27:34 by mbiusing         ###   ########.fr       */
+/*   Created: 2025/11/15 17:51:20 by mbiusing          #+#    #+#             */
+/*   Updated: 2025/11/15 18:19:52 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_memset(s, 0, n);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char  test1[20] = "987654321";
-	ft_bzero(test1, 2);
-	printf("%s", test1);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 23:25:41 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/10/28 12:09:25 by mbiusing         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:40:14 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*memalloced;
 	size_t	actualsize;
 
-	// overflow check
 	if (nmemb != 0 && size != 0 && (nmemb * size) / nmemb != size)
 		return (NULL);
 	actualsize = nmemb * size;

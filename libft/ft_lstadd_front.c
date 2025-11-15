@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbiusing <mbiusing@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:04:30 by mbiusing          #+#    #+#             */
-/*   Updated: 2025/11/13 10:27:34 by mbiusing         ###   ########.fr       */
+/*   Created: 2025/11/14 14:20:08 by mbiusing          #+#    #+#             */
+/*   Updated: 2025/11/15 17:07:07 by mbiusing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	ft_memset(s, 0, n);
+	new->next = *lst;
+	*lst = new;
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char  test1[20] = "987654321";
-	ft_bzero(test1, 2);
-	printf("%s", test1);
-	return (0);
-}*/
